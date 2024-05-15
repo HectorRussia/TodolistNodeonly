@@ -1,0 +1,63 @@
+<%- include('import')%>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!--sidebar-->   
+        <%- include('menu')%>
+            
+            <div id="page-content-wrapper">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-secondary border-bottom">
+                    <div class="container-fluid">
+                        <button class="btn btn-light" id="sidebarToggle">
+                            <i class="fa-solid fa-arrows-left-right fa-2xl"></i>
+                        </button>                     
+                    </div>
+                  </nav> 
+                <!----------------------------------------------------------------->
+                <div class="container-fluid">
+                    <div class="mt-4">
+                        <div style="text-align: center;"><h1>Wellcome <%= name %> <i class="fa-solid fa-heart fa-bounce" style="color: #ed021a;"></i></h1></div>
+                        <br>
+                        
+                        <div style="text-align: center;">
+                            <p>
+                                <h3>you can edit your pofile <i class="fa-solid fa-face-smile-beam" style="color: #0a23db;"></i></h3>
+                            </p>
+                        </div>
+                        <br>
+                        <form action="/dashboard/user/edit" method="post">
+                    
+                            <div style="text-align: center; margin: 20px auto; max-width: 400px; padding: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #f7f7f7;">
+                                <h3>Edit User Profile</h3>
+                                
+                                    <div style="margin-bottom: 10px;">
+                                        <label for="email">Email:</label>
+                                        <input type="text" id="email" name="email" value="<%= users[0].email %>" style="width: 100%; padding: 5px;">
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                        <label for="name">Name:</label>
+                                        <input type="text" id="name" name="name" value="<%= users[0].name %>" style="width: 100%; padding: 5px;">
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                        <label for="phone">Telephone:</label>
+                                        <input type="text" id="phone" name="phone" value="<%= users[0].phone %>" style="width: 100%; padding: 5px;">
+                                    </div>
+                                    <button type="submit" id="send" name="send" style="padding: 8px 16px; border: none; border-radius: 5px; background-color: #007BFF; color: #fff; cursor: pointer;">
+                                        Edit
+                                    </button>
+
+                                    <!--type="hidden" คือ อยากจะส่งค่าไปแต่ไม่อยากให้ผู้ใช้เห็น-->
+                                    <!--ต้องมีการส่ง id นะ ไม่งั้นเวลาแก้ไขเราจะระบุuserที่ id ไหนไม่ได้-->
+                                    <input type="hidden" name="id" value="<%=users[0].id%>">
+                      
+                            </div>
+                            
+                        </form>
+                      
+                    </div>
+                </div>
+                <!------------------------------------------------------------------>
+            </div>
+    </div>
+    <%- include('footer')%>
+</body>
+</html>

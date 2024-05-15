@@ -1,0 +1,151 @@
+<%- include('import') %>
+<style>
+        img{
+    height:150px;
+    width:100%;
+    }
+
+    .item{
+    padding-left:5px;
+    padding-right:5px;
+    }
+    .item-card{
+    transition:0.5s;
+    cursor:pointer;
+    }
+    .item-card-title{  
+    font-size:15px;
+    transition:1s;
+    cursor:pointer;
+    }
+    .item-card-title i{  
+    font-size:15px;
+    transition:1s;
+    cursor:pointer;
+    color:#ffa710
+    }
+    .card-title i:hover{
+    transform: scale(1.25) rotate(100deg); 
+    color:#18d4ca;
+    
+    }
+    .card:hover{
+    transform: scale(1.05);
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+    }
+    .card-text{
+    height:80px;  
+    }
+
+    .card::before, .card::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale3d(0, 0, 1);
+    transition: transform .3s ease-out 0s;
+    background: rgba(255, 255, 255, 0.1);
+    content: '';
+    pointer-events: none;
+    }
+    .card::before {
+    transform-origin: left top;
+    }
+    .card::after {
+    transform-origin: right bottom;
+    }
+    .card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+    transform: scale3d(1, 1, 1);
+    }
+</style>
+<body>
+        <div class="d-flex" id="wrapper">
+            <!--sidebar-->   
+            <%- include('menu')%>
+                
+                <div id="page-content-wrapper">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary border-bottom">
+                      <div class="container-fluid">
+                          <button class="btn btn-light" id="sidebarToggle">
+                              <i class="fa-solid fa-arrows-left-right fa-2xl"></i>
+                          </button>                     
+                      </div>
+                    </nav> 
+                    <!----------------------------------------------------------------->
+                    <div class="container-fluid">
+                        <div class="mt-4">
+                              <div style="text-align: center;"><h1>Hello <%= name %>. Congratulations on your success! <i class="fa-solid fa-trophy fa-bounce fa-xl" style="color: #e1f104;"></i></h1></div>
+                          
+                          <div style="text-align: center;">
+                              <p>
+                                  <h3> You can choose the title of your success message <i class="fa-regular fa-face-kiss-wink-heart fa-lg" style="color: #b12d0b;"></i></h3>
+                              </p>
+                          </div>
+                          <br>
+                          <!---------- card ---------->
+                          <div class="container mt-4">
+                              <div class="row">
+
+                                    <div class="col-md-3 col-sm-6 item">
+                                        <a href="/dashboard/success/work/success_work" style="color: black; text-decoration: none;">
+                                            <div class="card item-card card-block">
+                                                <img src="/image_many/topic_success/w2.jpg" alt="Photo of work">
+                                                <h5 class="card-title  mt-3 mb-3">Success of Working</h5>
+                                                <p class="card-text">This is a company that builds websites, web apps and e-commerce solutions.</p> 
+                                            </div>
+                                        </a>
+                                    </div>
+                                    
+                                    <div class="col-md-3 col-sm-6 item">
+                                        <a href="/dashboard/success/healthy/topic-healthy" style="color: black; text-decoration: none;">
+                                            <div class="card item-card card-block">                                   
+                                                <img src="/image_many/topic_success/h.jpg" alt="Photo of Healthy">
+                                                <h5 class="card-title  mt-3 mb-3">Success of Healthy</h5>
+                                                <p class="card-text">This is a company that builds websites, web .</p> 
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-6 item">
+                                        <a href="/dashboard/success/travel/success_travel" style="color: black; text-decoration: none;">
+                                            <div class="card item-card card-block">                                   
+                                                <img src="/image_many/topic_success/t.jpg" alt="Photo of Healthy">
+                                                <h5 class="card-title  mt-3 mb-3">Success of travel</h5>
+                                                <p class="card-text">This is a company that builds websites, web .</p> 
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-6 item">
+                                        <a href="/dashboard/success/personal/success_personal" style="color: black; text-decoration: none;">
+                                            <div class="card item-card card-block">                                   
+                                                <img src="/image_many/topic_success/p.jpg" alt="Photo of Healthy">
+                                                <h5 class="card-title  mt-3 mb-3">Success of peronal</h5>
+                                                <p class="card-text">This is a company that builds websites, web .</p> 
+                                            </div>
+                                        </a>
+                                    </div>
+                                    
+                                    <div class="col-md-3 col-sm-6 item mt-3">
+                                        <a href="/dashboard/success/money/success_money" style="color: black; text-decoration: none;">
+                                            <div class="card item-card card-block">                                    
+                                                <img src="/image_many/topic_success/m.jpg" alt="Photo of Money">
+                                                <h5 class="card-title  mt-3 mb-3">Success of Money</h5>
+                                                <p class="card-text">This is a company that builds websites, web apps and e-commerce solutions.</p> 
+                                            </div>
+                                        </a>
+                                    </div>
+                              </div>
+                              
+                            </div>
+                            
+                            <!---------- card ---------->
+                        </div>
+                    </div>
+                    <!------------------------------------------------------------------>
+                </div>
+        </div>
+        <%- include('footer')%>
+</body>
+</html>

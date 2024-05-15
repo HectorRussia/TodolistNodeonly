@@ -1,0 +1,90 @@
+<%- include('import')%>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <!--sidebar-->   
+        <%- include('menu')%>
+            
+            <div id="page-content-wrapper">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-secondary border-bottom">
+                    <div class="container-fluid">
+                        <button class="btn btn-light" id="sidebarToggle">
+                            <i class="fa-solid fa-arrows-left-right fa-2xl"></i>
+                        </button>                     
+                    </div>
+                  </nav> 
+                <!----------------------------------------------------------------->
+                <div class="container-fluid">
+                    <div class="mt-4">
+                     
+                        <div style="text-align: center;">
+                            <h1>Hi <%= name %>. Let's plan your travel
+                                <i class="fa-solid fa-plane fa-beat fa-2xl" style="color: #06307a;"></i>
+                            </h1>
+                        </div>
+
+                        <div style="text-align: center;">
+                            <p>
+                                <h3>Let's plan your tip <i class="fa-solid fa-car-side" style="color: #0b1241;"></i>
+                            </p>
+                    
+                        </div>
+                        <!--card-->
+                        <div class="d-flex justify-content-center align-items-center vh-50 ">
+                            <div class="card h-100">
+                                <img src="/image_many/travel/2.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">If you want to travel and are wondering where to go ?</h5>
+                                        <p class="card-text">However, before you travel A little planning will make your trip much smoother. Specify the date and time and possibly guess the cost of this trip.</p>
+                                    </div>
+                                    <p class="d-inline-flex gap-1">
+                                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#key-in-country" role="button" aria-expanded="false" aria-controls="key-in-country">Plan Your Travel"</a>
+                                    </p>
+                                    <div class="row">
+                                        <div class="col">
+                                        <div class="collapse multi-collapse" id="key-in-country">
+                                            <div class="card card-body">
+                                                <form action="/dashboard/save/travel" method="post">
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text" id="Day">Pick your destination</span>
+                                                        <input type="text" name="place" class="form-control" placeholder="such as Bangkok or America" aria-label="Day" aria-describedby="basic-addon1">
+                                                    </div>
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text" id="Day">When do you start your trip?</span>
+                                                        <input type="text" name="start" class="form-control" placeholder="Such as April 13, 2023" aria-label="start-tip" aria-describedby="basic-addon1">
+                                                    </div>
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text" id="Day">When does the trip end?</span>
+                                                        <input type="text" name="end" class="form-control" placeholder="Such as April 17, 2023" aria-label="end-tip" aria-describedby="basic-addon1">
+                                                    </div>
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text" id="Day">What vehicles are used in order of travel?</span>
+                                                        <input type="text" name="car" class="form-control" placeholder="Private cars, planes, buses" aria-label="car" aria-describedby="basic-addon1">
+                                                    </div>
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text">Plan the day-wise activities and course of action</span>
+                                                        <textarea class="form-control" name="plan" placeholder="On the first day, we will walk up the mountain. And we'll have a barbeque." aria-label="plan-tip"></textarea>
+                                                    </div>
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text" id="Day">Approximate total travel costs</span>
+                                                        <input type="text" name="money" class="form-control" placeholder="2000 bath or 2000 $" aria-label="money" aria-describedby="basic-addon1">
+                                                    </div>
+                                                    <div class="input-group mb-3 d-flex justify-content-center align-items-center">
+                                                        <button type="submit" class="btn btn-success btn-lg text-center">Travel Plan Record <i class="fa-solid fa-floppy-disk fa-2xl" style="color: #f4f4f5;"></i></button>
+                                                    </div>                                                    
+                                                </form>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>                        
+                        <!--card-->
+                    </div> 
+                </div>
+            </div>              
+    </div>
+             
+    <%- include('footer')%>
+</body>
+</html>

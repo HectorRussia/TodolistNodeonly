@@ -1,0 +1,72 @@
+<%- include('import') %>
+<body>
+        <div class="d-flex" id="wrapper">
+            <!--sidebar-->   
+            <%- include('menu')%>
+                
+                <div id="page-content-wrapper">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary border-bottom">
+                      <div class="container-fluid">
+                          <button class="btn btn-light" id="sidebarToggle">
+                              <i class="fa-solid fa-arrows-left-right fa-2xl"></i>
+                          </button>                     
+                      </div>
+                    </nav> 
+                    <!----------------------------------------------------------------->
+                    <div class="container-fluid">
+                        <div class="mt-4">
+                          <!---------- table ---------->
+                                <h1>This is table of your success <i class="fa-solid fa-file-pen fa-xl" style="color: #095253;"></i></h1>
+                                <div class="mt-4"></div>
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr class="table-dark">
+                                                <th scope="col">id</th>
+                                                <th scope="col">goals</th>
+                                                <th scope="col">namebook</th>
+                                                <th scope="col">positive</th>
+                                                <th scope="col">dreams</th>	
+                                                <th scope="col">Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <!--วนloopแสดงข้อมูล-->
+                                        <% personal.forEach(function(per){ %>
+                                         
+                                        <tr class="table-success">
+                                                <td style="border: 2px solid #000; height: 30px;"><%= per.id %></td>
+                                                <td style="border: 2px solid #000; height: 30px;"><%= per.goals %></td>
+                                                <td style="border: 2px solid #000; height: 30px;"><%= per.namebook %></td>
+                                                <td style="border: 2px solid #000; height: 30px;"><%= per.positive %></td>
+                                                <td style="border: 2px solid #000; height: 30px;"><%= per.dreams %></td>
+                                               
+                                                <td style="border: 2px solid #000; height: 30px;">
+                                                    <form method="post" action="/dashboard/show_topic/personal/personaling/sucess_personal/delete">
+                                                        <div style="padding-left: 5px;">
+                                                            <button type="submit" name="delete" class="rounded-button" style="background-color:aliceblue;">
+                                                                <i<i class="fa-solid fa-trash fa-xl" style="color: #f0430a;"></i>
+                                                            </button>
+                                                            <input type="hidden" name="id" value="<%=per.id%>">
+                                                        </div>
+                                                    </form>
+                                                </td>
+                                        </tr>
+                                
+                                        <% }) %>   
+                                        <tr>
+                                            <td colspan="15">
+                                                <div style="text-align: center; font-size: 25px;">------END of Data------</div>
+                                            </td>                                     
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                            <!---------- table ---------->
+                        </div>
+                    </div>
+                    <!------------------------------------------------------------------>
+                </div>
+        </div>
+        <%- include('footer')%>
+</body>
+</html>

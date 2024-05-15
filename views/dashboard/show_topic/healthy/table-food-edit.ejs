@@ -1,0 +1,83 @@
+<%- include('import')%>
+<body>
+        <div class="d-flex" id="wrapper">
+            <!--sidebar-->   
+            <%- include('menu')%>
+                
+                <div id="page-content-wrapper">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary border-bottom">
+                      <div class="container-fluid">
+                          <button class="btn btn-light" id="sidebarToggle">
+                              <i class="fa-solid fa-arrows-left-right fa-2xl"></i>
+                          </button>                     
+                      </div>
+                    </nav> 
+                    <!----------------------------------------------------------------->
+                    <div class="container-fluid">
+                        <div class="mt-4">
+                          <!---------- table ---------->
+                          <div class="form-body">
+                            <div class="row">
+                                <div class="form-holder">
+                                    <div class="form-content">
+                                        <div class="form-items" style="background-color: #053783">
+                                            <h3>Edit your food</h3>
+                                            <p>Fill in the data below.</p>
+                                            <form class="requires-validation" action="/dashboard/show_topic/healthy/table_food/edit" method="post">
+                                                
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label>Day : </label>
+                                                        <input class="form-control" type="text" name="Day"	 value="<%=items.Day%>" id=""> 
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label>morning : </label>
+                                                        <input class="form-control" type="text" name="morning"	 value="<%=items.morning%>" id=""> 
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label>noon : </label>
+                                                        <input class="form-control" type="text" name="noon"	 value="<%=items.noon%>" id=""> 
+                                                    </div>
+                                                </div>
+    
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label>evening : </label>
+                                                        <input class="form-control" type="text" name="evening" value="<%=items.evening%>" id=""></input> 
+                                                    </div>
+                                                </div>                         
+    
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label>total_kcal : </label>
+                                                        <input class="form-control" type="text" name="total_kcal" value="<%=items.total_kcal%>" id=""></input> 
+                                                    </div>
+                                                </div>   
+   
+
+                                                <div class="form-button mt-3 px-3">
+                                                    <button id="submit" type="submit" class="btn btn-primary">Save</button>
+                                                </div>
+                                                <!--ต้องมีการส่ง id นะ ไม่งั้นเวลาแก้ไขเราจะระบุuserที่ id ไหนไม่ได้-->
+                                                <input type="hidden" name="id" value="<%=items.id%>">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>      
+                            <!---------- table ---------->
+                        </div>
+                    </div>
+                    <!------------------------------------------------------------------>
+                </div>
+        </div>
+        <%- include('footer')%>
+</body>
+</html>

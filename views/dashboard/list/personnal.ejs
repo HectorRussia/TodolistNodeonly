@@ -1,0 +1,105 @@
+<%- include('import')%>
+
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <!--sidebar-->   
+        <%- include('menu')%>
+            
+            <div id="page-content-wrapper">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-secondary border-bottom">
+                    <div class="container-fluid">
+                        <button class="btn btn-light" id="sidebarToggle">
+                            <i class="fa-solid fa-arrows-left-right fa-2xl"></i>
+                        </button>                     
+                    </div>
+                </nav> 
+                <!----------------------------------------------------------------->
+                <div class="container-fluid">
+                    <div class="mt-4">
+                        <div style="text-align: center;">
+                            <h1>Hi <%= name %>. Let's plan your personal growth together!
+                                <i class="fa-solid fa-star fa-shake fa-xl" style="color: #e2b308;"></i>
+                            </h1>
+                        </div>
+
+                        <div style="text-align: center;">
+                            <p>
+                                <h3>Let's plan your self-development <i class="fa-solid fa-signal " style="color: #34af12;"></i>
+                            </p> 
+                        </div>
+                        <div class="container-fluid mb-5">   
+                            <!---------- card ---------->
+                                  <div class="form-body">
+                                    <div class="row">
+                                        <div class="form-holder mb-5">
+                                            <div class="form-content mb-5">
+                                                <div class="form-items mb-5" style="background-color:#3a1806">
+                                                    <div class="px-4"> 
+                                                        <h3>Plan today your self-development</h3>
+                                                        <p>Fill in the data below.</p>
+                                                    </div>
+                                                    <form class="mb-5 mx-3 py-2" action="/dashboard/save/personnal" method="post">  
+                                                        <div class="container mt-1">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="mb-3">
+                                                                        <label for="message" class="form-label">what are your goals for tomorrow</label>
+                                                                        <input type="text" class="form-control" name="goals"  placeholder="Enter your goals">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="mb-3">
+                                                                        <label for="message" class="form-label">The book title for self-development</label>
+                                                                        <input type="text" class="form-control" name="book"  placeholder="Enter your book">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="mb-3">
+                                                                        <label for="message" class="form-label">Have you thought positively today yet?</label>
+                                                                        <select type="text" name="positive" id="">
+                                                                            <option value="Yes">Yes</option>
+                                                                            <option value="No">No</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="mb-3">
+                                                                        <label for="message" class="form-label">Write down dreams before going to sleep</label>
+                                                                        <textarea class="form-control" name="dreams" id="message" rows="4" placeholder="Enter your dreams"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <button type="submit" class="btn btn-primary btn-block">Send goals</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>   
+                            <!---------- card ---------->
+                        </div>
+                    </div> 
+                </div>
+            </div>              
+    </div>
+             
+    <%- include('footer')%>
+</body>
+</html>

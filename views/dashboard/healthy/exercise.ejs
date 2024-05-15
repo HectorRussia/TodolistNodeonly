@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heal food</title>
+    <link href="/css2/bootstrap.css" rel="stylesheet">
+    <script src="/js2/bootstrap.bundle.min.js"></script>
+    <link href="/fontawesome/css/all.css" rel="stylesheet">
+    <script src="fontawesome/js/all.js" crossorigin="anonymous"></script>
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/styles2.css" rel="stylesheet">
+    <link href="/views/dashboard/healthy/css_food.css" rel="stylesheet">
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/scripts.js"></script>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!--sidebar-->   
+        <%- include('menu')%>
+            
+            <div id="page-content-wrapper">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-secondary border-bottom">
+                    <div class="container-fluid">
+                        <button class="btn btn-light" id="sidebarToggle">
+                            <i class="fa-solid fa-arrows-left-right fa-2xl"></i>
+                        </button>                     
+                    </div>
+                </nav>                
+                <!----------------------------------------------------------------->
+                <div class="container-fluid">
+                   
+                      <!---------- card ---------->
+                      <div class="form-body">
+                        <div class="row">
+                            <div class="form-holder">
+                                <div class="form-content">
+                                    <div class="form-items" style="background-color: #152733">
+                                        <h3>Plan today your exercise</h3>
+                                        <p>Fill in the data below.</p>
+                                        <form class="requires-validation" method="post" action="/dashboard/healthy/edit/exercise">
+                                            
+                                            <div class="col-md-12">
+                                                <div class="mb-3">
+                                                    <label for="message" class="form-label">Date</label>
+                                                    <input class="form-control" type="text" name="Day" placeholder="example Monday 15" required>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-12">
+                                                <div class="mb-3">
+                                                    <label for="message" class="form-label">Name of exercise</label>
+                                                <input class="form-control" type="text" name="name" placeholder="example pull-up" required>
+                                            </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <div class="mb-3">
+                                                    <label for="message" class="form-label">number of times</label>
+                                                <input class="form-control" type="text" name="number_time" placeholder=" 20 times" required>
+                                            </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <div class="mb-3">
+                                                    <label for="message" class="form-label">number of set</label>
+                                                <input class="form-control" type="text" name="number_set" placeholder=" 4 set " required>
+                                            </div>
+                                            </div>
+                                            
+                                            <div class="col-md-12">
+                                                <div class="mb-3">
+                                                    <label for="message" class="form-label">time start</label>
+                                                <input class="form-control" type="text" name="start" placeholder="12:00" required>
+                                            </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <div class="mb-3">
+                                                    <label for="message" class="form-label">time finish</label>
+                                                <input class="form-control" type="text" name="finish" placeholder="15:00" required>
+                                            </div>
+                                            </div>
+
+                                            <div class="form-button mt-3 px-3">
+                                                <button id="submit" type="submit" class="btn btn-primary">Save</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                        <!---------- card ---------->
+                    </div>
+                </div>
+                <!------------------------------------------------------------------>
+            </div>
+    </div>
+    <footer style="background-color: black;">
+        <div class="container" >
+            <p class="m-0 text-center text-white py-3">Copy Right &copy;2023 to do list </p>
+        </div>
+    </footer>
+</body>
+</html>

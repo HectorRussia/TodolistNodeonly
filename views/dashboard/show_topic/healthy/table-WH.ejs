@@ -1,0 +1,81 @@
+<!---------- table-excericse ---------->
+<tr>
+    <td colspan="9">
+        <h1>Edit your exercise <i class="fa-solid fa-file-pen fa-xl" style="color: #095253;"></i></h1>
+    </td>                                     
+</tr>
+<div class="mt-4"></div>
+<table class="table table-striped">
+    <thead>
+        <tr class="table-dark">
+            <th scope="col">id</th>
+            <th scope="col">Day</th>
+            <th scope="col">name</th>
+            <th scope="col">number_time</th>
+            <th scope="col">number_set</th>
+            <th scope="col">Start</th>
+            <th scope="col">finish</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Success</th>
+        </tr>
+    </thead>
+    <!--วนloopแสดงข้อมูล-->
+    <% exercise.forEach(function(ex){ %>
+    
+    <tr>
+            <td><%= ex.id %></td>
+            <td><%= ex.Day %></td>
+            <td><%= ex.name %></td>
+            <td><%= ex.number_time %></td>
+            <td><%= ex.number_set %></td>
+            <td><%= ex.start %></td>
+            <td><%= ex.finish %></td>
+            <td>
+                <form method="get" action="/dashboard/show_topic/work/working/edit">
+                    <div>
+                        <button type="submit" name="edit" class="rounded-button" style="background-color:gray;">
+                            <i class="fa-solid fa-pen-to-square fa-xl" style="color:black;"></i>
+                        </button>
+                        <input type="hidden" name="id1" value="<%=ex.id%>">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <form method="post" action="/dashboard/show_topic/work/working/delete">
+                    <div style="padding-left: 5px;">
+                        <button type="submit" name="delete" class="rounded-button" style="background-color:aliceblue;">
+                            <i<i class="fa-solid fa-trash fa-xl" style="color: #f0430a;"></i>
+                        </button>
+                        <input type="hidden" name="id1" value="<%=ex.id%>">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <form method="post" action="/dashboard/show_topic/work/working/success">
+                    <div style="padding-left: 15px;">
+                        <button type="submit" name="success" class="rounded-button" style="background-color: #08e70c;">
+                            <i class="fa-solid fa-check fa-xl"></i>
+                        </button>
+                        <input type="hidden" name="id1" value="<%=ex.id%>">
+                        <input type="hidden" name="Day" value="<%=ex.Day%>">
+                        <input type="hidden" name="moring" value="<%=ex.moring%>">
+                        <input type="hidden" name="noon" value="<%=ex.noon%>">
+                        <input type="hidden" name="evenning" value="<%=ex.evenning%>">
+                        <input type="hidden" name="total_kcal" value="<%=ex.total_kcal%>">
+                        <input type="hidden" name="time_stamp" value="<%=ex.date%>">
+                    </div>
+                </form>
+            </td>
+    </tr>
+
+    <% }) %>   
+    <tr>
+        <td colspan="9">
+            <div style="text-align: center; font-size: 25px;">------END of Data------</div>
+        </td>                                     
+    </tr>
+</table>
+</div>
+</div>
+</div>

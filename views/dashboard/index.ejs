@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="/css2/bootstrap.css" rel="stylesheet">
+    <script src="/js2/bootstrap.bundle.min.js"></script>
+    <link href="/fontawesome/css/all.css" rel="stylesheet">
+    <script src="fontawesome/js/all.js" crossorigin="anonymous"></script>
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/styles2.css" rel="stylesheet">
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/scripts.js"></script>
+    <style>
+        .item-card{
+      transition:0.5s;
+      cursor:pointer;
+      }
+      .item-card-title{  
+      font-size:15px;
+      transition:1s;
+      cursor:pointer;
+      }
+      .item-card-title i{  
+      font-size:15px;
+      transition:1s;
+      cursor:pointer;
+      color:#ffa710
+      }
+      .card-title i:hover{
+      transform: scale(1.25) rotate(100deg); 
+      color:#18d4ca;
+      
+      }
+      .card:hover{
+      transform: scale(1.05);
+      box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+      }
+      .card-text{
+      height:80px;  
+      }
+
+      .card::before, .card::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: scale3d(0, 0, 1);
+      transition: transform .3s ease-out 0s;
+      background: rgba(255, 255, 255, 0.1);
+      content: '';
+      pointer-events: none;
+      }
+      .card::before {
+      transform-origin: left top;
+      }
+      .card::after {
+      transform-origin: right bottom;
+      }
+      .card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+      transform: scale3d(1, 1, 1);
+      }
+    </style>
+</head>
+<body>
+        <div class="d-flex" id="wrapper">
+            <!--sidebar-->   
+            <%- include('menu')%>
+                
+                <div id="page-content-wrapper">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary border-bottom">
+                      <div class="container-fluid">
+                          <button class="btn btn-light" id="sidebarToggle">
+                              <i class="fa-solid fa-arrows-left-right fa-2xl"></i>
+                          </button>                     
+                      </div>
+                    </nav> 
+                    <!----------------------------------------------------------------->
+                    <div class="container-fluid">
+                        <div class="mt-4">
+                              <div style="text-align: center;"><h1>Wellcome <%= name %> <i class="fa-solid fa-heart fa-bounce" style="color: #ed021a;"></i></h1></div>
+                          
+                          <div style="text-align: center;">
+                              <p>
+                                  <h3> you can check your target here <i class="fa-solid fa-crosshairs fa-spin fa-lg" style="color: #15b1d1;"></i></h3>
+                              </p>
+                          </div>
+                          
+                          <!---------- card ---------->
+                          <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <div class="col">
+                              <div class="card h-100">
+                                <a href="/dashboard/show_topic/work/working" style="color: black; text-decoration: none;">
+                                  <img src="/image_card/working.jpg" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Working</h5>
+                                    <p class="card-text">Working towards goals is both good and important for an organization because it reflects responsibility and our potential.</p>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card h-100">
+                                <a href="/dashboard/show_topic/healthy/all-healthy" style="color: black; text-decoration: none;">
+                                  <img src="/image_card/health.jpg" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Health</h5>
+                                    <p class="card-text">There's nothing more important than taking care of your health, and the most crucial aspect is setting self-care goals. Work hard, but never forget to prioritize your well-being.</p>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card h-100">
+                                <a href="/dashboard/show_topic/travel/table-travel" style="color: black; text-decoration: none;">
+                                  <img src="/image_card/Travel.jpg" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Travel</h5>
+                                    <p class="card-text">On your days off, try finding new places to explore. Going out to new locations and meeting new people can change our perspective and attitude. However, before you travel, a little planning can make your journey much smoother.</p>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card h-100">
+                                <a href="/dashboard/show_topic/personal/table-personal" style="color: black; text-decoration: none;">
+                                  <img src="/image_card/Dream List.jpg" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Personal-growth</h5>
+                                    <p class="card-text">Age isn't just a measure of growing older; it's a different mindset. Therefore, we should cultivate a growth mindset every day, such as reading, setting goals, and nurturing our dreams.</p>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card h-100">
+                                <a href="/dashboard/show_topic/money/table-money" style="color: black; text-decoration: none;">
+                                  <img src="/image_card/Money Management.jpg" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Money Management</h5>
+                                    <p class="card-text">Managing finances is indeed a fundamental aspect of our lives. Sometimes, when we have income, it's essential to invest and not overspend. Let's create a financial plan to gain a clear picture of our spending habits!</p>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card h-100">
+                                <a href="/dashboard/success/show-topic" style="color: black; text-decoration: none;">
+                                <img src="/image_card/success.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Successful</h5>
+                                  <p class="card-text">Don't focus on success; instead, concentrate on the process because it's the process that leads to success. Don't fixate on the outcome, but rather on the method. That's what matters most.</p>
+                                </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                            <!---------- card ---------->
+                        </div>
+                    </div>
+                    <!------------------------------------------------------------------>
+                </div>
+        </div>
+        <%- include('footer')%>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<%- include('import')%>
+<style>
+    .A1
+    {
+        padding-left: 31%;
+        padding-bottom: 5%;
+    }
+    .card-img-top {
+        max-width: 100%; /* ปรับขนาดรูปภาพในการ์ด */
+        height: 100%;
+    }
+</style>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!--sidebar-->   
+        <%- include('menu')%>
+            
+            <div id="page-content-wrapper">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-secondary border-bottom">
+                    <div class="container-fluid">
+                        <button class="btn btn-light" id="sidebarToggle">
+                            <i class="fa-solid fa-arrows-left-right fa-2xl"></i>
+                        </button>                     
+                    </div>
+                </nav> 
+                <!----------------------------------------------------------------->
+                <div class="container-fluid">
+                    <div class="mt-4">
+                     
+                        <div style="text-align: center;">
+                            <h1>Hi <%= name %>. Let's plan your Healthy
+                                <i class="fa-solid fa-pizza-slice fa-bounce fa-2xl" style="color: #edc912;"></i>
+                            </h1>
+                        </div>
+
+                        <div style="text-align: center;">
+                            <p>
+                                <h3>Let's choose your health topic <i class="fa-solid fa-bowl-rice "></i></h3> 
+                            </p>
+                    
+                        </div>
+                       
+                        <div class="A1 ">
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="/image_many/healthy/food.jpg" class="card-img-top" alt="..." >
+                                        <div class="card-body">
+                                        <h5 class="card-title">Healthy Food</h5>
+                                        <p class="card-text" >If you want to lose weight or control your diet, try meal planning. It helps us stay on track with our goals.</p>
+                                        <a href="/dashboard/healthy/food" class="btn btn-success">Go note</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="/image_many/healthy/e1.jpg" class="card-img-top" alt="..." >
+                                        <div class="card-body">
+                                        <h5 class="card-title">Exercise</h5>
+                                        <p class="card-text" >Good health goes hand in hand with a good physique, and that comes from regular exercise.</p>
+                                        <a href="/dashboard/healthy/exercise"class="btn btn-success">Go note</a>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="/image_many/healthy/wh.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Weight & Height</h5>
+                                        <p class="card-text">Weighing yourself regularly can help you track your weight changes</p>
+                                        <a href="/dashboard/healthy/Weight_Height" class="btn btn-success">Go note</a>
+                                        </div>
+                                    </div>
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="/image_many/healthy/Weight&Height.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Check your BMI</h5>
+                                        <p class="card-text" >Let's calculate your BMI. BMI is another factor that indicates our health </p>
+                                        <a href="/dashboard/healthy/BMI" class="btn btn-success">Go Check</a>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        
+                    </div> 
+                </div>
+            </div>              
+    </div>
+             
+    <%- include('footer')%>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<%- include('import')%>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <!--sidebar-->   
+        <%- include('menu')%>
+            
+            <div id="page-content-wrapper">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-secondary border-bottom">
+                    <div class="container-fluid">
+                        <button class="btn btn-light" id="sidebarToggle">
+                            <i class="fa-solid fa-arrows-left-right fa-2xl"></i>
+                        </button>                     
+                    </div>
+                  </nav> 
+                <!----------------------------------------------------------------->
+                <div class="container-fluid">
+                    <div class="mt-4">
+                        <br>
+                        <div style="text-align: center;">
+                            <h1><%= name %>, you can set goals in your work.
+                                <i class="fa-solid fa-earth-americas fa-bounce" style="color: #465f8b;"></i>
+                            </h1>
+                        </div>
+                        
+                        <br>
+
+                        <div style="text-align: center;">
+                            <p>
+                                <h3>Let's start scheduling your work <i class="fa-solid fa-briefcase" style="color: #17191c;"></i></h3>
+                            </p>
+                    
+                        </div>
+                       
+                        <br>
+
+
+                        <form action="/dashboard/working/edit" method="post">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Topic</label>
+                                <!-- เพิ่ม 'name' attribute เพื่อระบุชื่อสำหรับการรับค่า -->
+                                <input type="text" class="form-control" name="Topic" id="exampleFormControlInput1" placeholder="Enter your topic">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput2">Start</label>
+                                <!-- เพิ่ม 'name' attribute เพื่อระบุชื่อสำหรับการรับค่า -->
+                                <input type="text" class="form-control" name="Start" id="exampleFormControlInput2" placeholder="such 1/12/2023">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput3">Deadline</label>
+                                <!-- เพิ่ม 'name' attribute เพื่อระบุชื่อสำหรับการรับค่า -->
+                                <input type="text" class="form-control" name="deadline" id="exampleFormControlInput3" placeholder="such 1/12/2023">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Content</label>
+                                <!-- เพิ่ม 'name' attribute เพื่อระบุชื่อสำหรับการรับค่า -->
+                                <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3" placeholder="Enter your content"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-dark btn-lg">Save <i class="fa-solid fa-floppy-disk fa-2xl" style="color: #f4f4f5;"></i></button>
+                            </div>
+                        </form>
+                        
+                        
+                    </div> 
+                </div>
+            </div>              
+    </div>
+             
+    <%- include('footer')%>
+</body>
+</html>

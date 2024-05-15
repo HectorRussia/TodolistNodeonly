@@ -1,0 +1,97 @@
+<%- include('import')%>
+<body>
+        <div class="d-flex" id="wrapper">
+            <!--sidebar-->   
+            <%- include('menu')%>
+                
+                <div id="page-content-wrapper">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary border-bottom">
+                      <div class="container-fluid">
+                          <button class="btn btn-light" id="sidebarToggle">
+                              <i class="fa-solid fa-arrows-left-right fa-2xl"></i>
+                          </button>                     
+                      </div>
+                    </nav> 
+                    <!----------------------------------------------------------------->
+                    <div class="container-fluid">
+                        <div class="mt-4">
+                          <!---------- table ---------->
+                                <h1>Edit your work <i class="fa-solid fa-file-pen fa-xl" style="color: #095253;"></i></h1>
+                                <div class="mt-4"></div>
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr class="table-dark">
+                                              <!--  <th scope="col">id</th>-->
+                                                <th scope="col">Topic</th>
+                                                <th scope="col">Start</th>
+                                                <th scope="col">Deadline</th>
+                                                <th scope="col">Content</th>
+                                                <th scope="col">Edit</th>
+                                                <th scope="col">Delete</th>
+                                                <th scope="col">Success</th>
+                                            </tr>
+                                        </thead>
+                                        <!--วนloopแสดงข้อมูล-->
+                                        <% working.forEach(function(work){ %>
+                                         
+                                        <tr>
+                                               <!-- <td style="border: 2px solid #000; height: 30px;"><%= work.id %></td>-->
+                                                <td style="border: 2px solid #000; height: 30px;"><%= work.Topic %></td>
+                                                <td style="border: 2px solid #000; height: 30px;"><%= work.Start %></td>
+                                                <td style="border: 2px solid #000; height: 30px;"><%= work.deadline %></td>
+                                                <td style="border: 2px solid #000; height: 30px;"><%= work.content %></td>
+                                                <td>
+                                                    <form method="get" action="/dashboard/show_topic/work/working/edit">
+                                                        <div>
+                                                            <button type="submit" name="edit" class="rounded-button" style="background-color:gray;">
+                                                                <i class="fa-solid fa-pen-to-square fa-xl" style="color:black;"></i>
+                                                            </button>
+                                                            <input type="hidden" name="id" value="<%=work.id%>">
+                                                        </div>
+                                                    </form>
+                                                </td>
+                                                <td>
+                                                    <form method="post" action="/dashboard/show_topic/work/working/delete">
+                                                        <div style="padding-left: 5px;">
+                                                            <button type="submit" name="delete" class="rounded-button" style="background-color:aliceblue;">
+                                                                <i<i class="fa-solid fa-trash fa-xl" style="color: #f0430a;"></i>
+                                                            </button>
+                                                            <input type="hidden" name="id" value="<%=work.id%>">
+                                                        </div>
+                                                    </form>
+                                                </td>
+                                                <td>
+                                                    <form method="post" action="/dashboard/show_topic/work/working/success">
+                                                        <div style="padding-left: 15px;">
+                                                            <button type="submit" name="success" class="rounded-button" style="background-color: #08e70c;">
+                                                                <i class="fa-solid fa-check fa-xl"></i>
+                                                            </button>
+                                                            <input type="hidden" name="id" value="<%=work.id%>">
+                                                            <input type="hidden" name="Topic" value="<%=work.Topic%>">
+                                                            <input type="hidden" name="Start" value="<%=work.Start%>">
+                                                            <input type="hidden" name="deadline" value="<%=work.deadline%>">
+                                                            <input type="hidden" name="content" value="<%=work.content%>">
+                                                        </div>
+                                                    </form>
+                                                </td>
+                                        </tr>
+                                
+                                        <% }) %>   
+                                        <tr>
+                                            <td colspan="9">
+                                                <div style="text-align: center; font-size: 25px;">------END of Data------</div>
+                                            </td>                                     
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                            <!---------- table ---------->
+                        </div>
+                    </div>
+                    <!------------------------------------------------------------------>
+                </div>
+        </div>
+        <%- include('footer')%>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<%- include('import')%>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <!--sidebar-->   
+        <%- include('menu')%>
+            
+            <div id="page-content-wrapper">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-secondary border-bottom">
+                    <div class="container-fluid">
+                        <button class="btn btn-light" id="sidebarToggle">
+                            <i class="fa-solid fa-arrows-left-right fa-2xl"></i>
+                        </button>                     
+                    </div>
+                  </nav> 
+                <!----------------------------------------------------------------->
+                <div class="container-fluid">
+                    <div class="mt-4">
+                        <div style="text-align: center;">
+                            <h1>Hi <%= name %>. Let's plan your budget!
+                                <i class="fa-solid fa-coins fa-bounce fa-xl" style="color: #f7e308;"></i>
+                            </h1>
+                        </div>
+
+                        <div style="text-align: center;">
+                            <p>
+                                <h3>Budget Planner <i class="fa-solid fa-money-check-dollar fa-xl" style="color: #30e12d;"></i>
+                            </p> 
+                        </div>
+                         <!----------------------------------------------------------------->
+               
+                        <div class="container-fluid mb-5">   
+                            <!---------- card ---------->
+                                  <div class="form-body">
+                                    <div class="row">
+                                        <div class="form-holder mb-5">
+                                            <div class="form-content mb-5">
+                                                <div class="form-items mb-5" style="background-color:#17a1a7">
+                                                    <div class="px-4" > 
+                                                        <h3>Plan today your meal</h3>
+                                                        <p >Fill in the data below.</p>
+                                                    </div>
+                                                    <form class="mb-5 mx-3 py-2" action="/dashboard/save/money" method="post">  
+                                                        <div class="container mt-1">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="mb-3">
+                                                                        <label for="message" class="form-label">Date</label>
+                                                                        <input type="text" class="form-control" name="Date"  placeholder="12/2/2023">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="mb-3">
+                                                                        <label for="message" class="form-label">Income:Bath</label>
+                                                                        <input type="text" class="form-control" name="income"  placeholder="20000">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="mb-3">
+                                                                        <label for="message" class="form-label">Expenses:Bath</label>
+                                                                        <input type="text" class="form-control" name="expenses"  placeholder="4000">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="mb-3">
+                                                                        <label for="message" class="form-label">investment:Bath</label>
+                                                                        <input type="text" class="form-control" name="investment"  placeholder="2000">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="mb-3">
+                                                                        <label for="message" class="form-label">Extrajob:Bath</label>
+                                                                        <input type="text" class="form-control" name="extrajob"  placeholder="3000">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="mb-3">
+                                                                        <label for="message" class="form-label">savings:Bath</label>
+                                                                        <input type="text" class="form-control" name="savings"  placeholder="15000">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="mb-3">
+                                                                        <label for="message" class="form-label">note your list today</label>
+                                                                        <textarea class="form-control" name="note" id="message" rows="4" placeholder="1.food 35 bath 2.Travel expenses 100 bath " style="color: #000;"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <button type="submit" class="btn btn-primary btn-block">Send</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>   
+                            <!---------- card ---------->
+                        </div>
+                    </div> 
+                </div>
+            </div>              
+    </div>
+             
+    <%- include('footer')%>
+</body>
+</html>
